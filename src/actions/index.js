@@ -14,3 +14,9 @@ export const toggleModal = (modal) => ({
     type: TOGGLE_MODAL,
     modal
 })
+
+export const TEST_TOGGLE_MODAL = "TEST_TOGGLE_MODAL";
+export const testToggleModal = modal => ({
+    type: TEST_TOGGLE_MODAL,
+    modal
+})

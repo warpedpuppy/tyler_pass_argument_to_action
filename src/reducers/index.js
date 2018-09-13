@@ -4,12 +4,17 @@ const initialState = {
     mainMenuActive: false,
     modalActive: "inactive",
     pageTitle: "inspiry",
-    docTitle: "inspiry: unblock your brain"
+    docTitle: "inspiry: unblock your brain",
+    textToggleModal: "blank"
 }
 
 export const inspiryReducer = (state = initialState, action) => {
-
-    if (action.type === actions.TOGGLE_MAIN_MENU) {
+    if (action.type === actions.TEST_TOGGLE_MODAL) {
+        return Object.assign({}, state, {
+            textToggleModal: action.modal
+        })
+    }
+    else if (action.type === actions.TOGGLE_MAIN_MENU) {
         return Object.assign({}, state, {
             mainMenuActive: !state.mainMenuActive
         })
@@ -31,7 +36,8 @@ export const inspiryReducer = (state = initialState, action) => {
     }
 
     else if (action.type === actions.TOGGLE_MODAL) {
-        if (typeof action.modal === "undefined" | "inactive" ) {
+        //alert('here', action.modal)
+        if (typeof action.modal === "undefined" || "inactive" ) {
             return Object.assign({}, state, {
                 modalActive: "inactive"
             })

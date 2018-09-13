@@ -32,11 +32,11 @@ class TopBar extends Component {
     //     this.props.dispatch(toggleModal());
     // }
     closeModal() {
-        this.props.dispatch(toggleModal());
+        //this.props.dispatch(toggleModal());
     }
     closeMenuopenModal(modal) {
         this.props.dispatch(toggleMainMenu());
-        this.props.dispatch(toggleModal());
+        //this.props.dispatch(toggleModal());
     }
 
     render() {
